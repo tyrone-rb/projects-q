@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+#include <string>
+#include <cctype>
+
+
+
+//account signup
+
+int main() {
+    string nameFirst;
+    string nameSurname;
+    string nameMiddle;
+
+    //tatanyngin name nang isa isa
+    cout << "Enter your First Name: "; // using getline para buong line ma cin
+    getline(cin, nameFirst);
+    cout << "Enter your Middle Name: ";
+    getline(cin, nameMiddle);
+    cout << "Ener your Surname: ";
+    getline(cin, nameSurname);
+
+    cout << "Your Full Name: " << nameFirst << " " << nameMiddle[0] << "." << " " << nameSurname;
+
+    int sycount = 0;
+
+    for (int i = 0; i <nameFirst.length(); i++) {
+        char c = tolower(nameFirst[i]);
+
+        if (c=='a'|| c=='e' || c=='i' || c=='o'|| c=='u'|| c=='y') {
+            sycount++;
+        }
+
+    }
+    if (nameFirst.back( ) == 'e') {
+        sycount--;
+    }
+
+    cout << "\nSyllable of First Name Count: " << sycount;
+    return 0;
+}
